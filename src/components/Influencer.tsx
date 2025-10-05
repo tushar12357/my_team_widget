@@ -1,7 +1,25 @@
-import React from 'react';
-import { Sparkles, TrendingUp, Users } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Sparkles, TrendingUp, Volume2, VolumeX } from 'lucide-react';
 
 export default function AIInfluencerWidget() {
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef(null);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.error('Autoplay failed:', error);
+      });
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 p-8 flex items-center justify-center">
       <div className="max-w-md w-full">
@@ -50,10 +68,11 @@ export default function AIInfluencerWidget() {
             <div className="w-full max-w-sm">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-orange-200">
                 <video 
+                  ref={videoRef}
                   className="w-full h-auto"
                   autoPlay 
                   loop 
-                  muted 
+                  muted={isMuted}
                   playsInline
                   preload="auto"
                   style={{ display: 'block' }}
@@ -65,6 +84,18 @@ export default function AIInfluencerWidget() {
                   <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                   LIVE
                 </div>
+                
+                <button
+                  onClick={toggleMute}
+                  className="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-md transition-all duration-200"
+                  aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+                >
+                  {isMuted ? (
+                    <VolumeX className="w-5 h-5" strokeWidth={2} />
+                  ) : (
+                    <Volume2 className="w-5 h-5" strokeWidth={2} />
+                  )}
+                </button>
               </div>
             </div>
 
