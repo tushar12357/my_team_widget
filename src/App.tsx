@@ -1,11 +1,19 @@
-import React from 'react';
-import { Check, Calendar, FileText, Phone, MessageCircle, Monitor, ArrowRight } from 'lucide-react';
+import React from "react";
+import {
+  Check,
+  Calendar,
+  FileText,
+  Phone,
+  MessageCircle,
+  Monitor,
+  ArrowRight,
+} from "lucide-react";
 
-import RealEstateWidget from './components/AICall';
-import AutomatedFollowUpWidget from './components/FollowUp';
-import AIInfluencerWidget from './components/Influencer';
-import FormCaptureWidget from './components/LeadCapture';
-import WebCall from './components/WebCall';
+import RealEstateWidget from "./components/AICall";
+import AutomatedFollowUpWidget from "./components/FollowUp";
+import AIInfluencerWidget from "./components/Influencer";
+import FormCaptureWidget from "./components/LeadCapture";
+import WebCall from "./components/WebCall";
 
 // Define the interface for step objects
 interface Step {
@@ -22,11 +30,12 @@ const App: React.FC = () => {
     {
       number: 1,
       title: "AI Influencer Runs Your Ads",
-      description: "Your AI social media influencer (Maya) creates and posts engaging content across platforms, running targeted ads that drive traffic to your funnel.",
+      description:
+        "Your AI social media influencer (Maya) creates and posts engaging content across platforms, running targeted ads that drive traffic to your funnel.",
       features: [
         "Creates 30+ posts monthly",
-        "Runs targeted ad campaigns", 
-        "Engages with audience 24/7"
+        "Runs targeted ad campaigns",
+        "Engages with audience 24/7",
       ],
       icon: Calendar,
       component: AIInfluencerWidget,
@@ -34,23 +43,25 @@ const App: React.FC = () => {
     {
       number: 2,
       title: "Prospect Fills Out Form",
-      description: "Interested prospects click your ad and complete the lead form with their information. The system instantly captures and routes the data.",
+      description:
+        "Interested prospects click your ad and complete the lead form with their information. The system instantly captures and routes the data.",
       features: [
         "Instant data capture",
         "Automatic CRM sync",
-        "Zero manual data entry"
+        "Zero manual data entry",
       ],
       icon: FileText,
       component: FormCaptureWidget,
     },
     {
       number: 3,
-      title: "AI Calls Within 3 Minutes", 
-      description: "Maya calls the lead immediately, qualifies them with natural conversation, handles objections, and books a qualified appointment on your calendar.",
+      title: "AI Calls Within 3 Minutes",
+      description:
+        "Maya calls the lead immediately, qualifies them with natural conversation, handles objections, and books a qualified appointment on your calendar.",
       features: [
         "Instant callback within 3 minutes",
         "Natural human-like conversation",
-        "Books appointment automatically"
+        "Books appointment automatically",
       ],
       icon: Phone,
       component: RealEstateWidget,
@@ -58,11 +69,12 @@ const App: React.FC = () => {
     {
       number: 4,
       title: "Automated Follow-Up Sequence",
-      description: "Maya sends personalized follow-ups via WhatsApp, SMS, and email. She nurtures leads with 12+ touchpoints until they book or opt out.",
+      description:
+        "Maya sends personalized follow-ups via WhatsApp, SMS, and email. She nurtures leads with 12+ touchpoints until they book or opt out.",
       features: [
         "WhatsApp, SMS, Email sequences",
-        "Personalized messaging", 
-        "12+ touchpoints until conversion"
+        "Personalized messaging",
+        "12+ touchpoints until conversion",
       ],
       icon: MessageCircle,
       component: AutomatedFollowUpWidget,
@@ -70,18 +82,24 @@ const App: React.FC = () => {
     {
       number: 5,
       title: "AI Receptionist Answers Everything",
-      description: "Your AI receptionist handles all incoming calls and inquiries 24/7, routes to the right department, and ensures zero missed opportunities.",
+      description:
+        "Your AI receptionist handles all incoming calls and inquiries 24/7, routes to the right department, and ensures zero missed opportunities.",
       features: [
         "24/7 call coverage",
         "Smart call routing",
-        "Zero missed calls"
+        "Zero missed calls",
       ],
       icon: Monitor,
       component: WebCall,
-    }
+    },
   ];
 
-  const crmLogos: string[] = ["Salesforce", "HubSpot", "GoHighLevel", "Pipedrive"];
+  const crmLogos: string[] = [
+    "Salesforce",
+    "HubSpot",
+    "GoHighLevel",
+    "Pipedrive",
+  ];
 
   return (
     <section className="relative min-h-screen bg-gradient-to-b from-flow-cream via-flow-light-cream to-flow-dark-cream py-20 px-5 overflow-hidden lg:py-32">
@@ -99,7 +117,8 @@ const App: React.FC = () => {
             How It Works
           </h2>
           <p className="text-xl font-semibold text-flow-text-secondary max-w-4xl mx-auto leading-relaxed md:text-2xl lg:text-3xl">
-            Watch your AI workforce capture, qualify, and convert leads automatically across all channels
+            Watch your AI workforce capture, qualify, and convert leads
+            automatically across all channels
           </p>
         </div>
 
@@ -110,12 +129,12 @@ const App: React.FC = () => {
               {/* Step Container */}
               <div
                 className={`grid gap-12 items-center mb-16 animate-fade-in-up lg:grid-cols-2 lg:gap-20 lg:mb-24 ${
-                  index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+                  index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Step Content */}
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
                   {/* Step Number Badge */}
                   <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-flow-orange to-flow-dark-orange rounded-full text-3xl font-black text-white mb-7 animate-pulse-ring md:w-20 md:h-20 md:text-4xl">
                     {step.number}
@@ -148,11 +167,11 @@ const App: React.FC = () => {
                 </div>
 
                 {/* Step Visual */}
-                <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
+                <div className={index % 2 === 1 ? "lg:col-start-1" : ""}>
                   <div className="group relative bg-white rounded-3xl p-10 shadow-2xl border border-black/5 min-h-[440px] flex items-center justify-center overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-flow-orange/20 hover:shadow-3xl hover:border-flow-orange/15">
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-flow-orange/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                    
+
                     {/* Component Render */}
                     <div className="relative z-10 w-full h-full flex items-center justify-center">
                       <step.component />
@@ -176,7 +195,7 @@ const App: React.FC = () => {
         <div className="relative text-center bg-gradient-to-br from-white to-flow-light-cream rounded-3xl p-16 shadow-2xl border-2 border-flow-orange/20 overflow-hidden mt-20 lg:p-20">
           {/* Rotating Background */}
           <div className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-gradient-radial from-flow-orange/8 to-transparent animate-rotate-slow" />
-          
+
           <div className="relative z-10">
             {/* Badge */}
             <div className="inline-flex items-center gap-3 bg-gradient-to-r from-flow-orange to-flow-dark-orange text-white px-8 py-3 rounded-full text-sm font-black uppercase tracking-wider mb-9 animate-badge-pulse">
@@ -188,7 +207,8 @@ const App: React.FC = () => {
               Connects With Your Favorite CRM
             </h3>
             <p className="text-xl font-semibold text-flow-text-secondary mb-14 max-w-3xl mx-auto leading-relaxed md:text-2xl">
-              All data syncs automatically to your existing tools—no manual work, no switching platforms
+              All data syncs automatically to your existing tools—no manual
+              work, no switching platforms
             </p>
 
             {/* CRM Logos */}
@@ -199,7 +219,14 @@ const App: React.FC = () => {
                   className="group relative font-jakarta font-black text-lg text-flow-text-primary bg-white px-10 py-5 rounded-2xl shadow-xl border border-black/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-flow-orange/20 hover:shadow-2xl hover:border-flow-orange/20 md:text-xl md:px-12 md:py-6"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-flow-orange/10 to-transparent opacity-0 rounded-2xl transition-opacity duration-300 group-hover:opacity-100" />
-                  <span className="relative z-10">{crm}</span>
+                  <div className="relative z-10 flex flex-col items-center gap-2">
+                    <img
+                      src={`/public/images/${crm.toLowerCase()}.png`} // Adjust path and extension as needed
+                      alt={`${crm} logo`}
+                      className="h-10 w-auto md:h-12"
+                    />
+                    <span>{crm}</span>
+                  </div>
                 </div>
               ))}
             </div>
@@ -211,7 +238,7 @@ const App: React.FC = () => {
             >
               {/* Shimmer Effect */}
               <div className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/35 to-transparent transition-all duration-700 group-hover:left-full" />
-              
+
               <span className="relative z-10">Book a Free Demo Call</span>
               <ArrowRight className="w-6 h-6 stroke-2 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
