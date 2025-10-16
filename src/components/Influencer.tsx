@@ -77,7 +77,7 @@ export default function AIInfluencerWidget() {
                   preload="auto"
                   style={{ display: 'block' }}
                 >
-                  <source src="https://storage.googleapis.com/msgsndr/LK2LrQP5tkIZ3ahmumnr/media/686ec758038ba8dfa348e01b.mp4" type="video/mp4" />
+                  <source src="https://storage.googleapis.com/msgsndr/LK2LrQP5tkIZ3ahmumnr/media/68ecb8d3a6b7f9435d277b41.mp4" type="video/mp4" />
                 </video>
                 
                 <div className="absolute top-2 sm:top-3 left-2 sm:left-3 bg-red-600 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
